@@ -1,0 +1,1 @@
+public class SonarQubeTest{private static int UNUSED_VARIABLE=42;public static void main(String[]args){System.out.println("Hello, SonarQube!");int result=divide(10,0);System.out.println("Result: "+result);}public static int divide(int a,int b){return a/b;}} 
