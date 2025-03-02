@@ -37,7 +37,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           args: |
-            -Dsonar.projectKey=REDA-is_MonProjet
+            -Dsonar.projectKey=MonProjet
             -Dsonar.organization=reda-is
             -Dsonar.host.url=https://sonarcloud.io
              -Dsonar.sources=.
