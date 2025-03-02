@@ -3,7 +3,7 @@ name: SonarCloud Analysis
 on:
   push:
     branches:
-      - main  # L'analyse se déclenche à chaque push sur main
+      - master  # L'analyse se déclenche à chaque push sur main
 
 jobs:
   sonarcloud:
