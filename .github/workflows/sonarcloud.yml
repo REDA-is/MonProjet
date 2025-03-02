@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - master
-
   pull_request:
     types: [opened, synchronize, reopened]
 
@@ -17,13 +16,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0  # Important pour que Sonar analyse tout l'historique Git
+          fetch-depth: 0  # Nécessaire pour SonarCloud
 
       - name: Setup Java JDK (si ton projet est en Java)
         uses: actions/setup-java@v3
         with:
           distribution: 'temurin'
-          java-version: '17'  # Adapte à ton projet
+          java-version: '17'  # Change si besoin
 
       - name: Cache SonarCloud packages
         uses: actions/cache@v3
@@ -37,9 +36,7 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
-          args: >
-            -Dsonar.projectKey=REDA-is_MonProjet \
-            -Dsonar.organization=reda-is \
-            -Dsonar.host.url=https://sonarcloud.io \
-            
- 
+          args: |
+            -Dsonar.projectKey=REDA-is_MonProjet
+            -Dsonar.organization=reda-is
+            -Dsonar.host.url=https://sonarcloud.io
