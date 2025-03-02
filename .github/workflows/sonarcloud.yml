@@ -38,5 +38,5 @@ jobs:
         with:
           args: |
             -Dsonar.projectKey=REDA-is_MonProjet
-            -Dsonar.organization=reda-is
+            -Dsonar.organization=Reda-is
             -Dsonar.host.url=https://sonarcloud.io
