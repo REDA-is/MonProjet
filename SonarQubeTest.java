@@ -1,5 +1,5 @@
 public class SonarQubeTest {
-    private static int UNUSED_VARIABLE = 42; // SonarQube va signaler cette variable comme inutilisée.
+    private static int UNUSED_VARIABLE = 40; // SonarQube va signaler cette variable comme inutilisée.
 
     public static void main(String[] args) {
         System.out.println("Hello, SonarQube!");
