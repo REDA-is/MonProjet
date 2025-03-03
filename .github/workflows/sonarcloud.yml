@@ -3,16 +3,21 @@ name: SonarCloud Analysis
 on:
   push:
     branches:
-      - master  # On exécute l'analyse sur la branche master
+      - main  # L'analyse se déclenche à chaque push sur la branche main
+  pull_request:
+    branches:
+      - main  # L'analyse s'exécute aussi sur les PR vers main
 
 jobs:
   sonarcloud:
+    name: SonarCloud Scan
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0  # Nécessaire pour une bonne analyse de SonarCloud
+          fetch-depth: 0  # Important pour une bonne analyse de SonarCloud
 
       - name: Set up JDK 17
         uses: actions/setup-java@v3
@@ -37,4 +42,4 @@ jobs:
             -Dsonar.organization=reda-is
             -Dsonar.host.url=https://sonarcloud.io
             -Dsonar.sources=.
-            -Dsonar.branch.name=master  # Ajout de cette ligne pour analyser master
+            -Dsonar.branch.name=main  # On force l'analyse sur main
